@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="utf-8">
     <title>Exercicio 4</title>
     <script>
-    function envio() {
-    var a = document.forms["Email/Password"]["Email"].value;
-    var a = document.forms["Email/Password"]["Password"].value;
-    }
-    var formulario = new XMLHttpRequest();
-    formulario.onload = envio;
-    formulario.open("GET","http://52.91.139.190/fsapi/users/login");
-    formulario.send();
+        function envio() {
+            var a = document.forms["Email/Password"]["email"].value;
+            var b = document.forms["Email/Password"]["password"].value;
+            var formulario = new XMLHttpRequest();
+        formulario.onload = envio;
+        formulario.open("POST", "http://52.91.139.190/fsapi/users/login");
+        formulario.send(JSON.stringify({
+        
+            "email": a.value,
+            "password": b.value
+        }))}
     </script>
 </head>
+
 <body>
-    <form name="Email/Password">
-    Email: 
-    <input type="text" value="" name="Email" /> <br> <br>
-    Password: 
-    <input type="text" value="" name="Password"/> <br> <br>
-    <input type="submit" value="Enviar Formulario">
+    <form method="POST" name="Email/Password">
+        Email:
+        <input type="text" value="" name="email" /> <br> <br>
+        Password:
+        <input type="text" value="" name="password" /> <br> <br>
+        <input type="submit" value="Enviar Formulario">
     </form>
 </body>
+
 </html>
