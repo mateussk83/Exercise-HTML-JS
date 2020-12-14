@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function Validar_Tudo() {
+    var a = document.forms["Form"]["Nome"].value;
+    var b = document.forms["Form"]["Empresas"].value;
+    var c = document.forms["Form"]["Horarios"].value;
+    if (a==""|| b=="" || c=="") {
+        alert("Por favor Preencha Todos os Espaços!");
+        return false;
+    }
+}
+    </script>
+</head> 
+<body>
+<form name="Form" onsubmit="return Validar_Tudo()" action= "">
+    Nome:
+    <input type="text" value="" name="Nome"/> <br> <br>
+    Pontos:
+        <select name="Pontos">
+            <option value="0.0">0.0</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="3.0">3.0</option>
+            <option value="4.0">4.0</option>
+            <option value="5.0">5.0</option>
+        </select><br></br>
+    Nota: 
+    <select name="Nota">
+        <option value="0.0">0.0</option>
+        <option value="1.0">1.0</option>
+        <option value="2.0">2.0</option>
+        <option value="3.0">3.0</option>
+        <option value="4.0">4.0</option>
+        <option value="5.0">5.0</option>
+        <option value="6.0">6.0</option>
+        <option value="7.0">7.0</option>
+        <option value="8.0">8.0</option>
+        <option value="9.0">9.0</option>
+        <option value="10.0">10.0</option>
+    </select><br></br>
+    Universidade:
+    <select name="Universidade">
+        <option value="UNIP">UNIP</option>
+        <option value="USP">USP</option>
+        <option value="FATEC">FATEC</option>
+        <option value="UNICAMP">UNICAMP</option>
+    </select><br></br>  
+    Empresas: 
+    <input type="text" value="" name="Empresas"/> <br> <br>
+    Avatars:
+    <select name="Avatars">
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Não binário">Nao binario</option>
+        </select> 
+    Horários: 
+    <input type="time" value="" name="Horarios"/> <br> <br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

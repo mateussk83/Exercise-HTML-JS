@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercicio 4</title>
+    <script>
+    function envio() {
+    var a = document.forms["Email/Password"]["Email"].value;
+    var a = document.forms["Email/Password"]["Password"].value;
+    }
+    var formulario = new XMLHttpRequest();
+    formulario.onload = envio;
+    formulario.open("GET","http://52.91.139.190/fsapi/users/login");
+    formulario.send();
+    </script>
+</head>
+<body>
+    <form name="Email/Password">
+    Email: 
+    <input type="text" value="" name="Email" /> <br> <br>
+    Password: 
+    <input type="text" value="" name="Password"/> <br> <br>
+    <input type="submit" value="Enviar Formulario">
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function Validar_Tudo() {
+    var a = document.forms["Form"]["a"].value;
+    var b = document.forms["Form"]["b"].value;
+    var c = document.forms["Form"]["c"].value;
+    var d = document.forms["Form"]["d"].value;
+    var e = document.forms["Form"]["e"].value;
+    var f = document.forms["Form"]["f"].value;
+    var f = document.forms["Form"]["g"].value;
+    var debug = document.getElementsByName("a").value;
+    if (a==""|| b=="" || c=="" || d=="" || e=="" || f=="" || g=="") {
+        alert("Por favor Preencha Todos os Espaços!");
+        return false;
+    }
+}
+    </script>
+</head>
+<body>
+<form name="Form" onsubmit="return Validar_Nome()" action= "">
+    Nome: 
+    <input type="text" value="" name="a"/> <br> <br>
+    Pontos: 
+    <input type="text" value="" name="b"/> <br> <br>
+    Nota: 
+    <input type="text" value="" name="c"/> <br> <br>
+    Universidade:
+    <input type="text" value="" name="d"/> <br> <br>
+    Empresas: 
+    <input type="text" value="" name="e"/> <br> <br>
+    Avatars: 
+    <input type="text" value="" name="f"/> <br> <br>
+    Horários: 
+    <input type="text" value="" name="g"/> <br> <br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
