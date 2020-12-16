@@ -1,41 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
+<!-- 04 – Utilizando o objeto Javascript “XMLHttpRequest” realizar o POST do recurso  “usuario“ para autenticação na API REST. 
+O objeto JSON “JavaScript Object  Notation” apresentado abaixo,  para o endereço  
+    http://52.91.139.190/fsapi/users/login
+        { 
+            "email": "fschorles@teste.com", 
+            "password": "123456" 
+        } 
+Dica: para submeter dados json a um servidor web devemos utilizar o content type = application/json -->
     <meta charset="utf-8">
-    <title>Exercicio 4</title>
+    
 </head>
 <body>
-    <form onsubmit="return envio($event)" name="Email/Password">
+    <p id="mytoken"></p>
+    <form  name="Email/Password">
+        
         Email:
         <input type="text" value="" name="email" /> <br> <br>
         Password:
         <input type="text" value="" name="password" /> <br> <br>
-        <input type="submit" value="Enviar Formulario">
+        <button onclick="envio(event)" >Enviar Formulario</button>
     </form>
-
-
-
-    <script>
-
-        function envio(x) {
-            x.preventDefault()
-            var a = document.forms["Email/Password"]["email"].value;
-            var b = document.forms["Email/Password"]["password"].value;
-            var formulario = new XMLHttpRequest();
-            formulario.open("POST", "http://52.91.139.190/fsapi/users/login");
-            formulario.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            formulario.onreadystatechange = function () {//Call a function when the state changes.
-                if (formulario.readyState == 4 && formulario.status == 200) {
-                    console.log(formulario.responseText);
-                }
+        
+        <script>
+            const t = localStorage.getItem("token");
+            if(t){
+                document.getElementById("mytoken").innerHTML = t;
             }
-            formulario.send(JSON.stringify({
-                "email": a.value,
-                "password": b.value
-            }))
-        }
-    </script>
-</body>
+            const envio = (e) => {
+               
+                e.preventDefault();
+                var a = document.forms["Email/Password"]["email"];
+                var b = document.forms["Email/Password"]["password"];
+                var request = new XMLHttpRequest();
+                request.open("POST","http://52.91.139.190/fsapi/users/login");
+                
+                request.setRequestHeader("Content-type","application/json");
+                /* request.setRequestHeader("Authorization",PASSAR O TOKEN) */
+                
+                request.onreadystatechange = () => {
+                    if(request.readyState == 4 && request.status == 200){
+                        const obj = JSON.parse(request.responseText);
+                        if(obj.token){
+                            console.log(obj.token);
+                            localStorage.setItem("token",obj.token);
+                            document.getElementById("mytoken").innerHTML = obj.token;
+                        }
+                        
+                    }
+                };
 
+                const body = JSON.stringify({
+                    "email": a.value,
+                    "password": b.value
+                })
+
+                request.send(body);
+                console.log("body:",body);
+            }
+            /* function envio() { */
+                
+               /*  
+               http://52.91.139.190/fsapi/users/auth/register-jwt
+               var a = document.forms["Email/Password"]["email"].value;
+                var b = document.forms["Email/Password"]["password"].value;
+                var formulario = new XMLHttpRequest();
+                formulario.onload = envio;
+                formulario.open("POST", "http://52.91.139.190/fsapi/users/login%22");
+                formulario.send(JSON.stringify({
+                    "email": a.value,
+                    "password": b.value
+                })) */
+           /*  } */
+        </script>
+</body>
 </html>
