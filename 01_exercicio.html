@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf8">
+<title>Mudar a cor do Background da página</title>  
+</head>
+<body>
+    <style>
+#red{
+    font: bold 12px/24px arial, helvetica, sans-aerif;	
+padding:0px;
+text-decoration: none;
+text-align:center;	
+color:#ccc;
+background: rgb(66, 44, 44)
+ no-repeat center center;	
+width:120px;  
+height:100px;	
+display:block;
+        }
+#green{
+    font: bold 12px/24px arial, helvetica, sans-aerif;	
+padding:0px;
+text-decoration: none;
+text-align:center;	
+color:#ccc;
+background: rgb(66, 44, 44)
+ no-repeat center center;	
+width:120px;  
+height:100px;	
+display:block;
+}
+    </style>
+<form>
+    <input type="button" id="green" value="VERDAO" onclick="verde()">
+    <input type="button" id="red" value="VERMELHAO" onclick="vermelho()">
+    
+</form>
+<script>
+    function verde(){
+        document.body.style.backgroundColor = "green";
+    }
+    function vermelho(){
+        document.body.style.backgroundColor = "red";
+    }
+    </script>
+</body>
+</html>
