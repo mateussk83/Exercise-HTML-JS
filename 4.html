@@ -22,8 +22,6 @@
                 request.open("POST","http://52.91.139.190/fsapi/users/login");
                 
                 request.setRequestHeader("Content-type","application/json");
-                request.setRequestHeader("Authorization","mytoken")
-
                 const body = JSON.stringify({
                     "email": a.value,
                     "password": b.value

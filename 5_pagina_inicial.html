@@ -10,20 +10,16 @@
         <input type="text" value="" name="email" /> <br> <br>
         Password:
         <input type="text" value="" name="password" /> <br> <br>
-        <input type="hidden" value="eyJhbGciOiJIUzI1NiJ9.e30.dUGAzN9fAHIj40zxCKoSE6ADu5aNR4dX0D4qhZ5uMPE" id="mytoken" />
-        <button><a href="5_pagina_cadastro.html">Cadastro</button>
+        <button onclick="envio(event)">Cadastro</button>
+        <button><a href="5_pagina_cadastro.html">ir para o cadastro</a></button>
     </form>
         
         <script>
-            const t = localStorage.getItem("token");
-            if(t){
-                document.getElementById("mytoken").innerHTML = t;
-            }
             const envio = (e) => {
-               
                 e.preventDefault();
                 var a = document.forms["Email/Password"]["email"];
                 var b = document.forms["Email/Password"]["password"];
+                const mytoken = "eyJhbGciOiJIUzI1NiJ9.e30.dUGAzN9fAHIj40zxCKoSE6ADu5aNR4dX0D4qhZ5uMPE"
                 var request = new XMLHttpRequest();
                 request.open("POST","http://52.91.139.190/fsapi/users/login");
                 
@@ -31,20 +27,13 @@
                 request.setRequestHeader("Authorization","mytoken")
                 
                 request.onreadystatechange = () => {
-                    if(request.readyState == 4 && request.status == 200){
-                        const obj = JSON.parse(request.responseText);
-                        if(obj.token){
-                            console.log(obj.token);
-                            localStorage.setItem("token",obj.token);
-                            document.getElementById("mytoken").innerHTML = obj.token;
-                        }
-                        
+                    if(request.readyState == 4 && request.status == 200){   
                     }
                 };
-
                 const body = JSON.stringify({
                     "email": a.value,
-                    "password": b.value
+                    "password": b.value,
+                    "token": mytoken
                 })
 
                 request.send(body);
