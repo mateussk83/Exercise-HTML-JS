@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    Escreva dota:
+    <input type="text" id="dotinha"><br><br>
+    <button type="button" onclick="quem_copiou()">Quem copiou??</button>
+</form>
+      <script> 
+        function quem_copiou(){
+            var dota = document.getElementById("dotinha").value
+        if(dota == "dota"){
+            alert("LoL copiou Dota")
+        }
+        else{
+            alert("Dota copiou LoL")
+        }
+        }
+    </script>
+
+</body>
+</html>

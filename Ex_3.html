@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <forms id="18">
+    Informe Seu Ano: 
+    <input type="text" value="" id="idade"><br><br>
+    <button type="button" value="" onclick="Menor_maior()">Mostrar</button><br><br>
+    <div id="mostrar_idade"></div><br>
+</forms>
+    <script>
+        function Menor_maior(){
+     var idade = parseInt(document.getElementById('idade').value);
+     if(idade < 18){
+        document.getElementById('mostrar_idade').innerHTML = "Você é menor de Idade";
+     }
+     else{
+         document.getElementById("mostrar_idade").innerHTML = "Você é maior de Idade";
+     }
+    }
+    </script>
+
+</body>
+</html>

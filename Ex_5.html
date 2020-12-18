@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    Primeiro Numero: <br>
+    <input type="text" id="n1"><br><br>
+    Segundo Numero:<br>
+    <input type="text" id="n2"><br><br>
+    Terceiro Numero:<br>
+    <input type="text" id="n3"><br><br>
+    Quarto Numero:<br>
+    <input type="text" id="n4"><br><br>
+    Quinto Numero:<br>
+    <input type="text" id="n5"><br><br>
+    <button type="button" onclick="media()">Calcular Media</button><br><br>
+    <div id="divisao"></div>
+
+    <script>
+        function media(){
+            var n1 = parseInt(document.getElementById('n1').value);
+            var n2 = parseInt(document.getElementById('n1').value);
+            var n3 = parseInt(document.getElementById('n1').value);
+            var n4 = parseInt(document.getElementById('n1').value);
+            var n5 = parseInt(document.getElementById('n1').value);
+            document.getElementById('divisao').innerHTML = n1 + n2 + n3 + n4 + n5 / 5
+        }
+        </script>
+</body>
+</html>
