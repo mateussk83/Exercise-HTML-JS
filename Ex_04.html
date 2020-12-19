@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        #hr{
+            border: 0;
+	border-top: 1px solid #094CFA;
+        }
+        #faça{
+            font: bold 12px/24px arial, helvetica, sans-aerif;	
+padding:0px;
+text-decoration: none;
+text-align:center;	
+color:#ccc;
+background: rgb(66, 44, 44)
+ no-repeat center center;	
+width:120px;  
+height:50px;	
+display:block;
+        }
+        #h1{
+            font-style: italic;
+        }
+   </style>
+</head>
+<body>
+    <hr class="linha"></hr>
+    <h2>Informe o Primeiro Nome:</h2>
+    <input type="text" id="primeiro nome">
+    <ul id="1"></ul>
+    <hr class="linha"></hr>
+    <h2>Informe o Segundo Nome:</h2>
+    <input type="text" id="segundo nome">
+    <ul id="2" ></ul>
+    <hr class="linha"></hr>
+    <h2>Informe o Terceiro Nome:</h2>
+    <input type="text" id="terceiro nome">
+    <ul id="3"></ul>
+    <hr class="linha"></hr>
+    <h2>Informe o Quarto Nome:</h2>
+    <input type="text" id="quarto nome">
+    <ul id="4"></ul>
+    <button type ="button" id="faça" onclick="ordenar()">Mostrar</button>
+    <script>
+        
+        function ordenar(){
+            var primeiro = document.getElementById('primeiro nome').value;
+            var segundo = document.getElementById('segundo nome').value;
+            var terceiro = document.getElementById('terceiro nome').value;
+            var quarto = document.getElementById('quarto nome').value;
+            document.getElementById('1').innerHTML = "O numero de caracteres é: " + primeiro.length;
+            document.getElementById('2').innerHTML = "O numero de caracteres é: " + segundo.length;
+            document.getElementById('3').innerHTML = "O numero de caracteres é: " + terceiro.length;
+            document.getElementById('4').innerHTML = "O numero de caracteres é: " + quarto.length;
+        }
+    </script>
+
+</body>
+</html>

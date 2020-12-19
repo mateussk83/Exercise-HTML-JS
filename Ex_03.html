@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="letras()">Aperte para ver os deuses</button>
+    <ul id="nomes"></ul><br>
+    <ul id="nomes1"></ul>
+    <ul id="nomes2"></ul>
+    <ul id="nomes3"></ul>
+<script>
+    function letras(){
+    var deuses = ["Deuses Nordicos", "Odin", "Loki", "Thor"]
+    deuses.sort();
+    document.getElementById('nomes').innerHTML = deuses[0],
+    document.getElementById('nomes1').innerHTML = deuses[1],
+    document.getElementById('nomes2').innerHTML = deuses[2],
+    document.getElementById('nomes3').innerHTML = deuses[3]
+    }
+</script>
+</body>
+</html>
