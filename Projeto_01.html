@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="endereço">
+    <h1>Endereço</h1><br>
+    <label>Abaixo você pode verificar o seu endereço pelo CEP</label><br><br>
+    <label>Insira seu Cep: <input id="cep" type="number" class="form-control" required="required"></label>
+    <input type="submit" onclick="buscar_cep()"><br>
+    cep:
+    <div id="cepzinho"></div><br>
+    Endereço:
+    <div id="endereço_completo"></div><br>
+    Tipo de Endereço:
+    <div id="tipo_endereço"></div><br>
+    Estado: 
+        <div id="cidade"></div><br>
+        Bairro:
+        <div id="distrito"></div><br>
+        Cidade:
+        <div id="local"></div><br>
+        DDD:
+        <div id="DDD"></div><br>
+
+</form>
+    <script>
+        function buscar_cep() {
+            var form = document.getElementById("endereço")
+            var cep = document.getElementById("cep").value
+            var url = `https://cep.awesomeapi.com.br/json/`
+            var url_completa = `https://cep.awesomeapi.com.br/json/`+cep
+            const tipo = {
+                method: "GET",
+                mode: "cors",
+                cache: "default"
+            }
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+            })
+            fetch(url_completa, tipo)
+                    .then((rensponse) => {
+                        rensponse.json()
+                            .then(function (data) {
+                                document.getElementById("cepzinho").innerHTML = data.cep
+                                document.getElementById("endereço_completo").innerHTML = data.address_type
+                                document.getElementById("tipo_endereço").innerHTML = data.address
+                                document.getElementById("distrito").innerHTML = data.district
+                                document.getElementById("cidade").innerHTML = data.state
+                                document.getElementById("local").innerHTML = data.city
+                                document.getElementById("DDD").innerHTML = data.ddd
+                            })
+                    })
+
+        }
+    </script>
+</body>
+
+</html>
