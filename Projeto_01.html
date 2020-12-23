@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id=contagem>
+        <h1>Cotações de Moedas</h1>
+        selecione a moeda: <select name="tipos">
+            <option name="Dólar Comercial" value="USD">USD</option>
+            <option name="Dólar Canadense" value="CAD">CAD</option>
+            <option name="Dólar Australiano" value="AUD">AUD</option>
+            <option name="EURO" value="EUR">EUR</option>
+            <option name="Franco Suíço" value="CHF">CHF</option>
+            <option name="Iene Japonês" value="JPY">JPY</option>
+            <option name="YUAN CHINÊS" value="CNY">CNY</option>
+            <option name="Novo Shekel Israelense" value="ILS">ILS</option>
+            <option name="LITECOIN" value="LTC">LTC</option>
+            <option name="BITCOIN" value="BTC">BTC</option>
+            <option name="Libra Esterlina" value="GBP">GBP</option>
+            <option name="Peso Argentino" value="ARS">ARS</option>
+        </select>
+        <input type="submit" onclick="cotacao()">
+        <h3>Valor da moeda em REAL:<div id="high"></div>
+        </h3>
+        </select><br></br>
+    </form>
+    <script>
+        function cotacao() {
+            var form = document.getElementById("contagem")
+            var url_USD = `https://economia.awesomeapi.com.br/all/USD-BRL`;
+            var url_CAD = `https://economia.awesomeapi.com.br/all/CAD-BRL`;
+            var url_AUD = `https://economia.awesomeapi.com.br/all/AUD-BRL`;
+            var url_EUR = `https://economia.awesomeapi.com.br/all/EUR-BRL`;
+            var url_CHF = `https://economia.awesomeapi.com.br/all/CHF-BRL`;
+            var url_JPY = `https://economia.awesomeapi.com.br/all/JPY-BRL`;
+            var url_CNY = `https://economia.awesomeapi.com.br/all/CNY-BRL`;
+            var url_ILS = `https://economia.awesomeapi.com.br/all/ILS-BRL`;
+            var url_LTC = `https://economia.awesomeapi.com.br/all/LTC-BRL`;
+            var url_BTC = `https://economia.awesomeapi.com.br/all/BTC-BRL`;
+            var url_GBR = `https://economia.awesomeapi.com.br/all/GBR-BRL`;
+            var url_ARS = `https://economia.awesomeapi.com.br/all/ARS-BRL`;
+            var tipos = document.forms["contagem"]["tipos"].value;
+            const tipo = {
+                method: "GET",
+                mode: "cors",
+                cache: "default"
+            }
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+            })
+            if (tipos == "USD") {
+                fetch(url_USD, tipo)
+                    .then((rensponse) => {
+                        rensponse.json()
+                            .then(function (data) {
+                                const resultado = data
+                                document.getElementById("high").innerHTML = data.USD.high
+                                console.log(data)
+                            })
+                    })
+            }
+            if (tipos == "CAD") {
+                fetch(url_CAD, tipo)
+                    .then((rensponse) => {
+                        rensponse.json()
+                            .then(function (data) {
+                                const resultado = data
+                                document.getElementById("high").innerHTML = data.CAD.high
+                                console.log(data)
+                            })
+                    })
+            }
+            if (tipos == "AUD") {
+                fetch(url_AUD, tipo)
+                    .then((rensponse) => {
+                        rensponse.json()
+                            .then(function (data) {
+                                const resultado = data
+                                document.getElementById("high").innerHTML = data.AUD.high
+                                console.log(data)
+                            })
+                    })
+            }
+        if (tipos == "EUR") {
+            fetch(url_EUR, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.EUR.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "CHF") {
+            fetch(url_CHF, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.CHF.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "JPY") {
+            fetch(url_JPY, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.JPY.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "CNY") {
+            fetch(url_CNY, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.CNY.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "ILS") {
+            fetch(url_ILS, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.ILS.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "LTC") {
+            fetch(url_LTC, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.LTC.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "BTC") {
+            fetch(url_BTC, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.BTC.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "GBR") {
+            fetch(url_GBR, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.GBR.high
+                            console.log(data)
+                        })
+                })
+        }
+        if (tipos == "ARS") {
+            fetch(url_ARS, tipo)
+                .then((rensponse) => {
+                    rensponse.json()
+                        .then(function (data) {
+                            const resultado = data
+                            document.getElementById("high").innerHTML = data.ARS.high
+                            console.log(data)
+                        })
+                })
+        }
+    }
+    </script>}
+</body>
+
+</html>
