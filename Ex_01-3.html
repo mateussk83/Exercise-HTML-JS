@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>  
+    <div id="resultado"></div>
+
+    <script>
+        var tipo = ["repetição "]
+        tipo.forEach(repeticao);
+        function repeticao(palavra){
+            str = String(palavra);
+        for(var i = 0; i < 4;){
+            str = str + String(palavra);
+            i = i + 1
+        }
+        document.getElementById("resultado").innerHTML = str
+    }
+    </script>
+</body>
+</html>

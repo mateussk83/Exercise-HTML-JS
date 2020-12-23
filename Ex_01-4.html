@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="repeticao()">Mostrar</button>
+    <div id="resultado"></div>
+    <script>
+        function repeticao(){
+            cont = 0
+            var str = "repetição "
+            while(cont <= 3){
+                str = str + "repetição "
+                cont = cont + 1
+            }
+            document.getElementById("resultado").innerHTML = str
+        }
+    </script>
+
+</body>
+</html>

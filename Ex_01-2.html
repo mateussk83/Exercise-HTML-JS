@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="repeticao()">mostrar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function repeticao(){
+        var str = "repetição "
+        for(var i = 0; i < 19;){
+            str = str + "repetição "
+            i = i + 1
+        }
+        document.getElementById("resultado").innerHTML = str
+    }
+    </script>
+</body>
+</html>
