@@ -8,4 +8,5 @@ Exercicio_02 - Com o que foi feito no exercício anterior, exiba todos os nomes,
 Exercicio_03 - Seguindo do exercício 02, adicione o .sort para filtrar o array exibido no HTML. alfabeticamente  
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Exercicio_04 -  Exiba a quantidade de letras que possuem o texto inserido ao clicar no botão.
+(O extra eu fiz no Exercicio 4 mesmo)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
