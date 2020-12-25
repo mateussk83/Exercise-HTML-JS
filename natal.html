@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+  font-family: 'Righteous', cursive;
+  color:white;
+  text-align: center;
+  background: #dd4848;
+  background-image: url('https://i.imgur.com/BiSmXaq.png'), url('https://i.imgur.com/XHuy0NJ.png'), url('https://i.imgur.com/okpRxJU.png');
+  -webkit-animation: snow 20s linear infinite;
+  -moz-animation: snow 20s linear infinite;
+  -ms-animation: snow 20s linear infinite;
+  animation: snow 20s linear infinite;
+}
+#faça{
+            font: bold 12px/24px arial, helvetica, sans-aerif;	
+padding:0px;
+text-decoration: none;
+text-align:center;	
+color:#ccc;
+background: rgb(66, 44, 44)
+ no-repeat center center;	
+width:120px;  
+        }
+        .dias {
+  text-shadow: 4px 2px 3px rgba(0,0,0, 0.6);
+}
+.horas {
+  text-shadow: 4px 2px 3px rgba(0,0,0, 0.6);
+}
+.minutos {
+  text-shadow: 4px 2px 3px rgba(0,0,0, 0.6);
+}
+.segundos {
+  text-shadow: 4px 2px 3px rgba(0,0,0, 0.6);
+}
+.inner {
+  display:inline-block;
+  border: 5px solid white;
+  padding: 20px;
+  width: 80px;
+  height: 80px;
+  box-shadow: 5px 5px 5px rgba(0,0,0, 0.5);
+  background: repeating-linear-gradient(55deg, 
+    rgba(221, 72, 72, 0.1), 
+    rgba(221, 72, 72, 0.1) 5px,
+    rgba(255, 255, 255, 0.2) 5px, 
+    rgba(255, 255, 255, 0.2) 10px);
+}
+.inner .smalltext {
+  font-size: 20px;
+  text-shadow: 4px 2px 3px rgba(0,0,0, 0.6);
+}
+@keyframes snow {
+  0% { background-position: 0px, 0px, 0px, 0xp, 0xp, 0xp}
+  50% { background-color: #dc5959 }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px;
+  background-color: #dd4848;
+  }
+}
+
+    </style>
+    <form id="natal">
+    <h1>Aperte Aqui para Mostrar as Horas</h1>
+        <div></div>
+    <button onclick="natalzao()" id="faça">Aperte </button><br>
+    <h1>Horas Pro Natal</h1>
+    <div class="inner">
+    <div id="segundos"></div>
+    <div class="smalltext">segundos</div>
+</div>
+<div class="inner">
+        <div id="minutos"></div>
+        <div class="smalltext">minutos</div>
+</div>
+<div class="inner">
+        <div id="horas"></div>
+        <div class="smalltext">horas</div>
+        </div>
+        <div class="inner">
+         <div id="dias"></div>
+         <div class="smalltext">dias</div>
+         </div>
+        
+</form>
+<script>
+    function natalzao(){
+        var form = document.getElementById("natal")
+        form.addEventListener("submit", function (event) {
+                event.preventDefault();
+            })
+            var now = new Date();
+        var Natal = new Date(2020, 11, 25);
+
+        var Tempo_atual = now.getTime();
+ 
+        var Tempo_evento = Natal.getTime();
+        var Tempo_restante = Tempo_evento - Tempo_atual;
+        var segundo = Math.floor(Tempo_restante/ 1000);
+        var minuto = Math.floor(segundo / 60);
+        var hora = Math.floor(minuto / 60);
+        var dia = Math.floor(hora / 24);
+            document.getElementById("segundos").innerHTML = segundo / 100
+            document.getElementById("minutos").innerHTML = minuto
+            document.getElementById("horas").innerHTML = hora
+            document.getElementById("dias").innerHTML = dia
+
+        }
+
+</script>
+</body>
+</html>
